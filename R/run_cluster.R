@@ -3,9 +3,9 @@ run_cluster <- function(
   deepsplit_degree = 3,
   k = 14,
   skip_additional_heatmaps = FALSE,
-  aggcluster_object = aggcluster_photoperiodic,
-  gene_IDs = gene_identifiers,
-  expression_matrix = expression_matrix_photoperiodic
+  aggcluster_object,
+  gene_IDs,
+  expression_matrix
 ){
 
   dir.create(dir, recursive = TRUE, showWarnings = FALSE)

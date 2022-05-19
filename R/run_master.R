@@ -24,6 +24,7 @@ run_master <- function(
     k = k,
     skip_additional_heatmaps = TRUE
   )
+
 }
 
 ## Check number of clusters
@@ -43,3 +44,21 @@ run_master <- function(
 #   filename = "/Users/TedCCLeung/Documents/Projects/Photoperiod/2_analysis/2_pipeline/PhotoperiodClusters/hybrid/static_exemplars.pdf",
 #   dense = TRUE)
 
+
+# a <- "/Users/TedCCLeung/Documents/Projects/Photoperiod/2_analysis/2_pipeline/PhClusters/hybrid/clusters.tsv"
+# b <- read.table(a, sep = "\t", header = TRUE)
+# subs <- unique(b$sub)
+#
+# lapply(subs, function(sub){
+#   genes <- b[b$sub == sub, "geneID"]
+#   if (length(genes) > 0 & length(genes) <= 90){
+#     write.table(genes, file = paste0(sub, ".tsv"), row.names = FALSE, quote = FALSE, col.names = FALSE)
+#   }
+# })
+#
+# lapply(unique(b$static), function(sub){
+#   genes <- b[b$static == sub, "geneID"]
+#   if (length(genes) > 0 & length(genes) <= 90){
+#     write.table(genes, file = paste0(sub, ".tsv"), row.names = FALSE, quote = FALSE, col.names = FALSE)
+#   }
+# })

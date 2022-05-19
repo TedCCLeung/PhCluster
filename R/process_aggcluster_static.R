@@ -1,6 +1,7 @@
 #' Function to
 #'
 #' @importFrom magrittr %>%
+#' @importFrom rlang .data
 #'
 #' @param aggcluster_out output object from AggExCluster
 #' @param identifiers Character. Name of genes

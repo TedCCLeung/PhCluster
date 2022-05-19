@@ -43,12 +43,6 @@
 #' @format A vector of 8302 photoperiodic genes
 "photoperiodic_genes"
 
-
-#' Expression of photoperiodic genes in mean TMM calculated by edgeR
-#'
-#' @format A data frame with 8293 rows and 18 variables:
-"expression_matrix_photoperiodic"
-
 #' Gene names for the matrix expression_matrix_photoperiodic
 #'
 #' @format Character vector
