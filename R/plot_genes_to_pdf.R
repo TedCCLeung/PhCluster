@@ -9,7 +9,7 @@ plot_genes_to_pdf <- function(
   return_directly = FALSE
 ){
 
-  if (return_directly){
+  if (!return_directly){
 
     if (dense){
       ggpubr::ggarrange(plotlist = Map(plot_gene_dense, genes, tags, tags2,

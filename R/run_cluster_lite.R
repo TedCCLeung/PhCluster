@@ -1,6 +1,6 @@
 run_cluster <- function(
-  deepsplit_degree = 3,
-  k = 14,
+  deepsplit_degree,
+  k,
   aggcluster_object,
   gene_IDs,
   expression_matrix
@@ -35,8 +35,8 @@ run_cluster <- function(
   dynamic_labels <- aggcluster_dynamic$labels
   dynamic_clusters <- aggcluster_dynamic$clusters
 
-  #### MAKE HEATMAP ---------------------
 
+  #### MAKE HEATMAP ---------------------
   ## Make heatmap
   heatmap_input_matrix <- TMM_mean_matrix[gene_IDs, ] %>% t() %>% scale() %>% t()
 
@@ -63,7 +63,7 @@ run_cluster <- function(
   df_hybrid$dynamic_exemplar <- rep(dynamic_exemplars %>% names(), times = lengths(dynamic_clusters))
 
 
-  #### CLUSTER INFO ---------------------
+  #### PLOT EXEMPLARS ---------------------
   hybrid_clusters <- lapply(unique(df_hybrid$sub), function(x){df_hybrid[df_hybrid$sub == x, "geneID"]})
   names(hybrid_clusters) <- unique(df_hybrid$sub)
 
@@ -78,7 +78,29 @@ run_cluster <- function(
   df_hybrid$dynamic_exemplar <- hybrid_exemplars_vector[df_hybrid$sub]
 
   ## Plot out exemplars
-  plot_genes_to_pdf(genes = static_exemplars %>% names(), tags = paste0(addLeadingZeros(1:length(static_clusters))), tags2 = as.character(static_exemplars), filename = paste0(dir, "/static_exemplars.pdf"), dense = TRUE)
-  plot_genes_to_pdf(genes = hybrid_exemplars %>% unlist(), tags = paste0(df_hybrid$sub %>% unique()), tags2 = as.character(lengths(hybrid_clusters) %>% as.character()), filename = paste0(dir, "/dynamic_exemplars.pdf"), dense = TRUE)
+  s_plot <- plot_genes_to_pdf(
+    genes = static_exemplars %>% names(),
+    tags = paste0(addLeadingZeros(1:length(static_clusters))),
+    tags2 = as.character(static_exemplars),
+    filename = paste0(dir, "/static_exemplars.pdf"),
+    dense = TRUE,
+    return_directly = TRUE
+    )
+
+  h_plot <- plot_genes_to_pdf(
+    genes = hybrid_exemplars %>% unlist(),
+    tags = paste0(df_hybrid$sub %>% unique()),
+    tags2 = as.character(lengths(hybrid_clusters) %>% as.character()),
+    filename = paste0(dir, "/dynamic_exemplars.pdf"),
+    dense = TRUE,
+    return_directly = TRUE
+  )
+
+  return(list(
+    "heatmap" = hybrid_heatmap,
+    "static_exemplars" = s_plot,
+    "hybrid_exemplars" = h_plot,
+    "info_table" = df_hybrid
+    ))
 }
 
