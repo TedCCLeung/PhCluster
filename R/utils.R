@@ -1,3 +1,5 @@
+#' @importFrom rlang .data
+
 calculate_z_row <- function(df){
   dfz <- t(scale(t(df)))
   dfz[is.na(dfz)] <- 0
