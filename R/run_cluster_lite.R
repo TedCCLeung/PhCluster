@@ -1,4 +1,4 @@
-run_cluster <- function(
+run_cluster_lite <- function(
   deepsplit_degree,
   k,
   aggcluster_object,
