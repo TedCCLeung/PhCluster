@@ -5,30 +5,42 @@ plot_genes_to_pdf <- function(
   filename = "./genes.pdf",
   dense = FALSE,
   ymax = 4,
-  ymin = -2
+  ymin = -2,
+  return_directly = FALSE
 ){
 
-  if (dense){
+  if (return_directly){
 
-    ggpubr::ggarrange(plotlist = Map(plot_gene_dense, genes, tags, tags2,
-                                     rep(ymax, length(genes)), rep(ymin, length(genes))),
-                      nrow = length(genes)) %>%
-      ggplot2::ggsave(
-        filename = filename,
-        height = length(genes)*1.1,
-        width = 2.0,
-        limitsize = FALSE
-      )
+    if (dense){
+      ggpubr::ggarrange(plotlist = Map(plot_gene_dense, genes, tags, tags2,
+                                       rep(ymax, length(genes)), rep(ymin, length(genes))),
+                        nrow = length(genes)) %>%
+        ggplot2::ggsave(
+          filename = filename,
+          height = length(genes)*1.1,
+          width = 2.0,
+          limitsize = FALSE
+        )
+    } else {
+      ggpubr::ggarrange(plotlist = Map(plot_gene, genes, tags, rep(ymax, length(genes)), rep(ymin, length(genes))), nrow = length(genes)) %>%
+        ggplot2::ggsave(
+          filename = filename,
+          height = length(genes)*1.5,
+          width = 2.5,
+          limitsize = FALSE
+        )
+    }
 
   } else {
 
-    ggpubr::ggarrange(plotlist = Map(plot_gene, genes, tags, rep(ymax, length(genes)), rep(ymin, length(genes))), nrow = length(genes)) %>%
-      ggplot2::ggsave(
-        filename = filename,
-        height = length(genes)*1.5,
-        width = 2.5,
-        limitsize = FALSE
-      )
-
+    if (dense){
+      ggpubr::ggarrange(plotlist = Map(plot_gene_dense, genes, tags, tags2,
+                                       rep(ymax, length(genes)), rep(ymin, length(genes))),
+                        nrow = length(genes))
+    } else {
+      ggpubr::ggarrange(plotlist = Map(plot_gene, genes, tags,
+                                       rep(ymax, length(genes)), rep(ymin, length(genes))),
+                        nrow = length(genes))
+    }
   }
 }
