@@ -101,6 +101,6 @@ run_cluster_lite <- function(
     "static_exemplars" = s_plot,
     "hybrid_exemplars" = h_plot,
     "info_table" = df_hybrid
-    ))
+  ))
 }
 
