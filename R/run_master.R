@@ -27,38 +27,3 @@ run_master <- function(
 
 }
 
-## Check number of clusters
-#aggcluster_photoperiodic %>% apcluster::cutree(h = 0.80) %>% length() ## 41
-
-# plot_genes_to_pdf(
-#   genes = c("AT1G80340", "AT3G25590", "AT4G37310",
-#             "AT3G05220", "AT4G19900", "AT4G28652",
-#             "AT5G40570", "AT5G10750", "AT5G51410",
-#             "AT5G03280", "AT2G43160", "AT2G08025",
-#             "AT3G47100", "AT1G05347"
-#             ),
-#   tags = addLeadingZeros(1:14),
-#   tags2 = as.character(c(114, 250, 3157, 982, 61, 519, 20, 33, 56, 43, 2883, 99, 34, 42)),
-#   ymax = 4,
-#   ymin = -3,
-#   filename = "/Users/TedCCLeung/Documents/Projects/Photoperiod/2_analysis/2_pipeline/PhotoperiodClusters/hybrid/static_exemplars.pdf",
-#   dense = TRUE)
-
-
-# a <- "/Users/TedCCLeung/Documents/Projects/Photoperiod/2_analysis/2_pipeline/PhClusters/hybrid/clusters.tsv"
-# b <- read.table(a, sep = "\t", header = TRUE)
-# subs <- unique(b$sub)
-#
-# lapply(subs, function(sub){
-#   genes <- b[b$sub == sub, "geneID"]
-#   if (length(genes) > 0 & length(genes) <= 90){
-#     write.table(genes, file = paste0(sub, ".tsv"), row.names = FALSE, quote = FALSE, col.names = FALSE)
-#   }
-# })
-#
-# lapply(unique(b$static), function(sub){
-#   genes <- b[b$static == sub, "geneID"]
-#   if (length(genes) > 0 & length(genes) <= 90){
-#     write.table(genes, file = paste0(sub, ".tsv"), row.names = FALSE, quote = FALSE, col.names = FALSE)
-#   }
-# })
