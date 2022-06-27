@@ -14,6 +14,8 @@
 
 ##Bioconductor -----------------------------------
 # usethis::use_package("apcluster", type = "Suggests")
+# usethis::use_package("org.At.tair.db", type = "Suggests")
+# usethis::use_package("AnnotationDbi", type = "Suggests")
 
 ##Tidyverse -----------------------------------
 # usethis::use_package("roxygen2"); usethis::use_pipe(export = TRUE)
@@ -25,6 +27,7 @@
 # usethis::use_package("ggpubr", type = "Suggests")
 # usethis::use_package("ggmap", type = "Suggests")
 # usethis::use_package("tibble")
+# usethis::use_package("purrr", type = "Suggests")
 
 
 ##Set up NAMESPACE and install -----------------------------------

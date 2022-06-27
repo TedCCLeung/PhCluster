@@ -93,7 +93,16 @@ run_cluster <- function(
   df_hybrid$static_exemplar <- rep(static_exemplars %>% names(), times = lengths(static_clusters))
   df_hybrid$dynamic_exemplar <- rep(dynamic_exemplars %>% names(), times = lengths(dynamic_clusters))
 
-  utils::write.table(df_hybrid, file = paste0(dir, "/clusters.tsv"), quote = FALSE, row.names = FALSE, sep = "\t")
+  annotation_result <- list(get_TAIR("symbols"), get_TAIR("description"), get_TAIR("pubmed")) %>%
+    purrr::reduce(dplyr::full_join, by = "ID")
+
+  full_result <- dplyr::right_join(
+    annotation_result,
+    df_hybrid,
+    by = c("ID" = "geneID")
+  )
+
+  utils::write.table(full_result, file = paste0(dir, "/clusters.tsv"), quote = FALSE, row.names = FALSE, sep = "\t")
 
   hybrid_clusters <- lapply(unique(df_hybrid$sub), function(x){df_hybrid[df_hybrid$sub == x, "geneID"]})
   names(hybrid_clusters) <- unique(df_hybrid$sub)

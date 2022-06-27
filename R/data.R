@@ -48,3 +48,8 @@
 #' @format Character vector
 "gene_identifiers"
 
+
+#' Gene names for clock genes
+#'
+#' @format Character vector
+"clock_genes"

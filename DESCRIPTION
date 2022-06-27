@@ -23,12 +23,15 @@ Imports:
     tidyr (>= 1.1.4),
     utils
 Suggests: 
+    AnnotationDbi,
     apcluster,
     circlize,
     dendextend,
     dynamicTreeCut,
     ggmap,
-    ggpubr
+    ggpubr,
+    org.At.tair.db,
+    purrr
 RoxygenNote: 7.2.0
 Depends: 
     R (>= 2.10)
