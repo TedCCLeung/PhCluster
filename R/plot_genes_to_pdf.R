@@ -5,10 +5,10 @@ plot_genes_to_pdf <- function(
   filename = "./genes.pdf",
   dense = FALSE,
   ymax = 4,
-  ymin = -2,
+  ymin = -4,
   return_directly = FALSE,
   font_size = 7,
-  label_size = 3.5
+  label_size = 1.2
 ){
 
   if (!return_directly){
