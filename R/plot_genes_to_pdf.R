@@ -6,14 +6,17 @@ plot_genes_to_pdf <- function(
   dense = FALSE,
   ymax = 4,
   ymin = -2,
-  return_directly = FALSE
+  return_directly = FALSE,
+  font_size = 7
 ){
 
   if (!return_directly){
 
     if (dense){
       ggpubr::ggarrange(plotlist = Map(plot_gene_dense, genes, tags, tags2,
-                                       rep(ymax, length(genes)), rep(ymin, length(genes))),
+                                       rep(ymax, length(genes)), rep(ymin, length(genes)),
+                                       rep(1, length(genes)), rep(font_size, length(genes))
+                                       ),
                         nrow = length(genes)) %>%
         ggplot2::ggsave(
           filename = filename,
@@ -22,7 +25,11 @@ plot_genes_to_pdf <- function(
           limitsize = FALSE
         )
     } else {
-      ggpubr::ggarrange(plotlist = Map(plot_gene, genes, tags, rep(ymax, length(genes)), rep(ymin, length(genes))), nrow = length(genes)) %>%
+      ggpubr::ggarrange(plotlist = Map(plot_gene, genes, tags,
+                                       rep(ymax, length(genes)), rep(ymin, length(genes)),
+                                       rep(1, length(genes)), rep(font_size, length(genes))
+                                       ),
+                        nrow = length(genes)) %>%
         ggplot2::ggsave(
           filename = filename,
           height = length(genes)*1.5,
@@ -35,12 +42,17 @@ plot_genes_to_pdf <- function(
 
     if (dense){
       ggpubr::ggarrange(plotlist = Map(plot_gene_dense, genes, tags, tags2,
-                                       rep(ymax, length(genes)), rep(ymin, length(genes))),
+                                       rep(ymax, length(genes)), rep(ymin, length(genes)),
+                                       rep(1, length(genes)), rep(font_size, length(genes))
+                                       ),
                         nrow = length(genes))
     } else {
       ggpubr::ggarrange(plotlist = Map(plot_gene, genes, tags,
-                                       rep(ymax, length(genes)), rep(ymin, length(genes))),
+                                       rep(ymax, length(genes)), rep(ymin, length(genes)),
+                                       rep(1, length(genes)), rep(font_size, length(genes))
+                                       ),
                         nrow = length(genes))
     }
   }
+
 }
