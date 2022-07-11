@@ -14,8 +14,8 @@
 
 ##Bioconductor -----------------------------------
 # usethis::use_package("apcluster")
-# usethis::use_package("org.At.tair.db", type = "Suggests")
-# usethis::use_package("AnnotationDbi", type = "Suggests")
+# usethis::use_package("org.At.tair.db")
+# usethis::use_package("AnnotationDbi")
 
 ##Tidyverse -----------------------------------
 # usethis::use_package("roxygen2"); usethis::use_pipe(export = TRUE)
