@@ -16,7 +16,8 @@ plot_gene <- function(
   ymax = 4,
   ymin = -2,
   transparency = 1,
-  font_size = 7
+  font_size = 7,
+  label_size = 3.5
 ){
 
   ## Data manipulation ---------------------
@@ -42,7 +43,7 @@ plot_gene <- function(
     ggplot2::scale_y_continuous(limits = c(ymin, ymax), breaks = c(ymin, 0, ymax), expand = c(0, 0)) +
     ggplot2::labs(x = "Time (h)", y = "Relative expression (Z score)", title = "") +
     ggplot2::coord_fixed(ratio = 3.2) +
-    ggplot2::annotate("text", x = 12, y = 2, label= name_label, size = font_size, parse = TRUE) +
+    ggplot2::annotate("text", x = 12, y = 2, label= name_label, size = label_size, parse = TRUE) +
     ggplot2::theme(
       legend.position="none",
       strip.text = ggplot2::element_blank(),
