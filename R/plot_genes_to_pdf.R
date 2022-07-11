@@ -16,8 +16,7 @@ plot_genes_to_pdf <- function(
     if (dense){
       ggpubr::ggarrange(plotlist = Map(plot_gene_dense, genes, tags, tags2,
                                        rep(ymax, length(genes)), rep(ymin, length(genes)),
-                                       rep(1, length(genes)), rep(font_size, length(genes)),
-                                       rep(label_size, length(genes))
+                                       rep(1, length(genes))
                                        ),
                         nrow = length(genes)) %>%
         ggplot2::ggsave(
@@ -46,8 +45,7 @@ plot_genes_to_pdf <- function(
     if (dense){
       ggpubr::ggarrange(plotlist = Map(plot_gene_dense, genes, tags, tags2,
                                        rep(ymax, length(genes)), rep(ymin, length(genes)),
-                                       rep(1, length(genes)), rep(font_size, length(genes)),
-                                       rep(label_size, length(genes))
+                                       rep(1, length(genes))
                                        ),
                         nrow = length(genes))
     } else {
