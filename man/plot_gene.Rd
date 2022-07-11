@@ -4,7 +4,15 @@
 \alias{plot_gene}
 \title{Extract significantly up- and down-reguluted genes from edgeR results}
 \usage{
-plot_gene(gene, tag = "", ymax = 4, ymin = -2, transparency = 1)
+plot_gene(
+  gene,
+  tag = "",
+  ymax = 4,
+  ymin = -4,
+  transparency = 1,
+  font_size = 7,
+  label_size = 3.5
+)
 }
 \arguments{
 \item{gene}{Character}
@@ -16,6 +24,10 @@ plot_gene(gene, tag = "", ymax = 4, ymin = -2, transparency = 1)
 \item{ymin}{Numeric}
 
 \item{transparency}{Numeric}
+
+\item{font_size}{font size for axis labels}
+
+\item{label_size}{size of gene name annotation}
 }
 \value{
 None

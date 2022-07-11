@@ -7,6 +7,8 @@
 #' @param ymax Numeric
 #' @param ymin Numeric
 #' @param transparency Numeric
+#' @param font_size font size for axis labels
+#' @param label_size size of gene name annotation
 #'
 #' @return None
 
@@ -14,7 +16,7 @@ plot_gene <- function(
   gene,
   tag = "",
   ymax = 4,
-  ymin = -2,
+  ymin = -4,
   transparency = 1,
   font_size = 7,
   label_size = 3.5
