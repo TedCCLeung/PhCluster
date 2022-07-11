@@ -11,7 +11,9 @@ plot_gene(
   ymin = -4,
   transparency = 1,
   font_size = 7,
-  label_size = 3.5
+  label_size = 3.5,
+  label_x = 4,
+  label_y = -3
 )
 }
 \arguments{
@@ -28,6 +30,10 @@ plot_gene(
 \item{font_size}{font size for axis labels}
 
 \item{label_size}{size of gene name annotation}
+
+\item{label_x}{label x position}
+
+\item{label_y}{label y position}
 }
 \value{
 None

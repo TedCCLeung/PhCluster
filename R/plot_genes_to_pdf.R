@@ -8,7 +8,9 @@ plot_genes_to_pdf <- function(
   ymin = -4,
   return_directly = FALSE,
   font_size = 7,
-  label_size = 1.2
+  label_size = 1.2,
+  label_x = 4,
+  label_y = -3
 ){
 
   if (!return_directly){
@@ -52,7 +54,8 @@ plot_genes_to_pdf <- function(
       ggpubr::ggarrange(plotlist = Map(plot_gene, genes, tags,
                                        rep(ymax, length(genes)), rep(ymin, length(genes)),
                                        rep(1, length(genes)), rep(font_size, length(genes)),
-                                       rep(label_size, length(genes))
+                                       rep(label_size, length(genes)),
+                                       rep(label_x, length(genes)), rep(label_y, length(genes))
                                        ),
                         nrow = length(genes))
     }
