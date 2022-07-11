@@ -6,14 +6,14 @@
 
 ##Data manipulation -----------------------------------
 # usethis::use_package("utils")
-# usethis::use_package("dendextend", type = "Suggests")
-# usethis::use_package("circlize", type = "Suggests")
+# usethis::use_package("dendextend")
+# usethis::use_package("circlize")
 # usethis::use_package("ComplexHeatmap")
 # usethis::use_package("rlang")
-# usethis::use_package("dynamicTreeCut", type = "Suggests")
+# usethis::use_package("dynamicTreeCut")
 
 ##Bioconductor -----------------------------------
-# usethis::use_package("apcluster", type = "Suggests")
+# usethis::use_package("apcluster")
 # usethis::use_package("org.At.tair.db", type = "Suggests")
 # usethis::use_package("AnnotationDbi", type = "Suggests")
 
@@ -24,10 +24,10 @@
 # usethis::use_package("dplyr", min_version = "1.0.7")
 # usethis::use_package("tidyr", min_version = "1.1.4")
 # usethis::use_package("ggplot2", min_version = "3.3.5")
-# usethis::use_package("ggpubr", type = "Suggests")
-# usethis::use_package("ggmap", type = "Suggests")
+# usethis::use_package("ggpubr")
+# usethis::use_package("ggmap")
 # usethis::use_package("tibble")
-# usethis::use_package("purrr", type = "Suggests")
+# usethis::use_package("purrr")
 
 
 ##Set up NAMESPACE and install -----------------------------------

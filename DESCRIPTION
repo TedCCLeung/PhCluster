@@ -12,10 +12,17 @@ LazyData: true
 URL: https://github.com/TedCCLeung/PhCluster
 BugReports: https://github.com/TedCCLeung/PhCluster/issues
 Imports: 
+    apcluster,
+    circlize,
     ComplexHeatmap,
+    dendextend,
     dplyr (>= 1.0.7),
+    dynamicTreeCut,
+    ggmap,
     ggplot2 (>= 3.3.5),
+    ggpubr,
     magrittr (>= 2.0.1),
+    purrr,
     rlang,
     roxygen2,
     stringr (>= 1.4.0),
@@ -24,14 +31,7 @@ Imports:
     utils
 Suggests: 
     AnnotationDbi,
-    apcluster,
-    circlize,
-    dendextend,
-    dynamicTreeCut,
-    ggmap,
-    ggpubr,
-    org.At.tair.db,
-    purrr
+    org.At.tair.db
 RoxygenNote: 7.2.0
 Depends: 
     R (>= 2.10)
