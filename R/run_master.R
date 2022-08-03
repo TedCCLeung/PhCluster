@@ -24,6 +24,17 @@ run_master <- function(
     k = k,
     skip_additional_heatmaps = TRUE
   )
-
 }
 
+
+
+# run_master(
+#   input_matrix = cbind(
+#     expression_data(0, photoperiodic_only = TRUE)$LD,
+#     expression_data(0, photoperiodic_only = TRUE)$SD,
+#     expression_data(0, photoperiodic_only = TRUE)$EQ
+#   ),
+#   deepSplit_degree = 2,
+#   k = 14,
+#   output_dir = "data-raw/level2/"
+# )
